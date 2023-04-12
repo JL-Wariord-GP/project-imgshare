@@ -38,7 +38,7 @@ module.exports = app => {
 
     // Static files
 
-    app.use('/public',express.static(path.join(__dirname, '../public')))
+    app.use('/public',express.static(path.join(__dirname, '../public')));
 
     //ErrorHandlers
 
