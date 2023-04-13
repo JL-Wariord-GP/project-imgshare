@@ -1,6 +1,7 @@
 const path = require('path');
 const { randomNumber } = require('../helpers/libs');
 const fs = require('fs-extra');
+const {Image} = require('../models/index')
 
 const ctrl = {};
 
@@ -12,12 +13,14 @@ ctrl.create = async (req, res) => {
     const imgUrl = randomNumber();
     const imageTemPath = req.file.path;
     const ext = path.extname(req.file.originalname).toLowerCase();
-    const targetPath = path.resolve(`src/public/upload/${imgUrl}.${ext}`);
+    const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
 
     if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
         await fs.rename(imageTemPath, targetPath);
-    }
 
+        
+    }
+    console.log(Image);
     res.send('works!');
 
 };
