@@ -18,4 +18,5 @@ ImageSchema.virtual('uniqueId')
         return this.filename.replace(path.extname(this.filename), '')
     });
 
-module.export = mongoose.model('Image', ImageSchema);
+module.exports = mongoose.model('Image', ImageSchema);
+
