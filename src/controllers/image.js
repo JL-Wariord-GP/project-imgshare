@@ -41,8 +41,6 @@ ctrl.create = (req, res) => {
     saveImage();
 
 
-
-
 };
 
 ctrl.like = (req, res) => {
