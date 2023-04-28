@@ -1,6 +1,7 @@
 import { Comment, Image } from "../models";
 
 export default {
+    
     async newest() {
         const comments = await Comment.find().limit(5).sort({ timestamp: -1 });
 
