@@ -1,6 +1,7 @@
 import { Image } from "../models";
 
 export default {
+    
     async popular() {
         const images = await Image.find()
             .limit(9)
@@ -8,4 +9,5 @@ export default {
             .lean({ virtuals: true });
         return images;
     },
+
 };
